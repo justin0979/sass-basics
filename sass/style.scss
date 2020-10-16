@@ -1,0 +1,87 @@
+@import "function";
+@import "mixin";
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+nav {
+  margin: divide(6, 2) * 1rem;
+  background-color: $color-primary;
+
+  @include clearfix;
+}
+
+.navigation {
+  list-style: none;
+  float: left;
+
+  li {
+    display: inline-block;
+    margin-left: 3rem;
+
+    &:first-child {
+      margin: 0;
+    }
+
+    a:link,
+    a:visited {
+      @include style-link-text($color-text-dark);
+    }
+  }
+}
+
+.button {
+  float: right;
+}
+
+%btn-placeholder {
+  padding: 1rem;
+  display: inline-block;
+  text-align: center;
+  border-radius: 10rem;
+  width: $width-button;
+  @include style-link-text($color-text-light);
+}
+
+.btn-main:link,
+.btn-main:visited {
+  @extend %btn-placeholder;
+}
+
+.btn-hot:link,
+.btn-hot:visited {
+  @extend %btn-placeholder;
+}
+
+.btn-main {
+  &:link {
+    background-color: $color-secondary;
+  }
+
+  &:hover {
+    background-color: darken($color-secondary, 15%);
+  }
+}
+
+.btn-hot {
+  &:link {
+    background-color: $color-tertiary;
+  }
+
+  &:hover {
+    background-color: lighten($color-tertiary, 10%);
+  }
+}
