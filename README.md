@@ -5,6 +5,5 @@ This serves mainly as a reminder of some basics like nesting, variable names, mi
 Uses parcel, so start with:
 
 ```sh
-npm i \
-  && npm start
+npm i && npm start
 ```
